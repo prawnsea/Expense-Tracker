@@ -1,0 +1,22 @@
+#title{
+    margin-top: 20px;
+    font-family: 'Itim', cursive;
+    text-shadow: -0.5px 0 black, 0 0.5px black, 1px 0 black, 0 -0.5px black;
+}
+#description{
+    margin-top: 10px;
+
+}
+#nameInput, #priceInput{
+    opacity: 75%;
+}
+#nameInput:focus, #priceInput:focus{
+    box-shadow: none !important;
+    border: 1px solid black;
+}
+#tableHeader{
+    margin-top: 20px;
+    background-color: #198655;
+    border-radius: 5px;
+    font-size: 1rem;
+}
