@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const dataDiv = document.querySelector("#data-container");
   btnAdd.addEventListener("click", addNew);
   // button function
+  let totalPrice = 0; // para sa adding later
   function addNew() {
     // getting them input valuez
     const expenseInput = document.getElementById("nameInput").value;
@@ -21,22 +22,33 @@ document.addEventListener("DOMContentLoaded", function () {
     expenseElement.classList.add("col");
     expenseElement.textContent = expenseInput;
     // price
-    const inputElement = document.createElement("div");
-    inputElement.classList.add("col");
-    inputElement.innerText = priceInput;
+    const priceElement = document.createElement("div");
+    priceElement.classList.add("col");
+    priceElement.innerText = priceInput;
+    // total
+    const totalDiv = document.createElement("div");
+    totalDiv.classList.add = ("col");
+    totalDiv.textContent = 
     // action
-    const actionDiv = document.createElement("div");
+    const iconElementDiv = document.createElement("div");
+    iconElementDiv.classList.add('col');
     const iconElement = document.createElement("img");
-    iconElement.src = "/SVGs/trash.svg";
-
+    iconElement.id = "delete-icon";
+    iconElement.src = "deleteIcon.svg";
+    // removing event using delete icon
+    iconElement.addEventListener("click", function () {
+      newDiv.remove();
+    });
     // ihalo mo na insan (append)
     actionDiv.appendChild(iconElement);
+    //displaying the total
 
+    // adding the new added elements in the HTML
     newDiv.appendChild(expenseElement);
-    newDiv.appendChild(inputElement);
+    newDiv.appendChild(priceElement);
     newDiv.appendChild(actionDiv);
+    newDiv.appendChild(totalDiv);
 
     dataDiv.appendChild(newDiv);
-    console.log(dataDiv);
   }
 });
