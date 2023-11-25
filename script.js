@@ -1,36 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Button Functionalities
-
-  // document.querySelector to match/select the element in the HTML
+  // button thingz
+  // pang get/select ng element
   const btnAdd = document.getElementById("btn-add");
   console.log(btnAdd);
-  // Getting the div for the elements that will be added
+  // getting them divs
   const dataDiv = document.querySelector("#data-container");
   btnAdd.addEventListener("click", addNew);
-  // Function for button
+  // button function
   function addNew() {
-    // Getting the input values
+    // getting them input valuez
     const expenseInput = document.getElementById("nameInput").value;
     const priceInput = document.getElementById("priceInput").value;
-    // Creating new Element
-
+    // new elements (parent node)
     const newDiv = document.createElement("div");
-    // Creating new class under that element
+    // new class sa parent node (child)
     newDiv.classList.add("row");
-
-    // Creating new elements for the input expense name
+    // new element under class row (apo)
     const expenseElement = document.createElement("div");
+    // new element under row (apo sa tuhod (bootstrap thingz)) expense
     expenseElement.classList.add("col");
     expenseElement.textContent = expenseInput;
-    // for the price input
+    // price
     const inputElement = document.createElement("div");
     inputElement.classList.add("col");
     inputElement.innerText = priceInput;
-    // for the action input
+    // action
     const actionDiv = document.createElement("div");
     const iconElement = document.createElement("img");
     iconElement.src = "/SVGs/trash.svg";
-    // appending the iconElement to actionDiv
+
+    // ihalo mo na insan (append)
     actionDiv.appendChild(iconElement);
 
     newDiv.appendChild(expenseElement);
