@@ -1,54 +1,55 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // button thingz
-  // pang get/select ng element
   const btnAdd = document.getElementById("btn-add");
-  console.log(btnAdd);
-  // getting them divs
-  const dataDiv = document.querySelector("#data-container");
+  let total = 0;
+  // Button Add function
   btnAdd.addEventListener("click", addNew);
-  // button function
-  let totalPrice = 0; // para sa adding later
+
   function addNew() {
-    // getting them input valuez
-    const expenseInput = document.getElementById("nameInput").value;
-    const priceInput = document.getElementById("priceInput").value;
-    // new elements (parent node)
-    const newDiv = document.createElement("div");
-    // new class sa parent node (child)
-    newDiv.classList.add("row");
-    // new element under class row (apo)
-    const expenseElement = document.createElement("div");
-    // new element under row (apo sa tuhod (bootstrap thingz)) expense
-    expenseElement.classList.add("col");
-    expenseElement.textContent = expenseInput;
-    // price
-    const priceElement = document.createElement("div");
-    priceElement.classList.add("col");
-    priceElement.innerText = priceInput;
-    // total
-    const totalDiv = document.createElement("div");
-    totalDiv.classList.add = ("col");
-    totalDiv.textContent = 
-    // action
-    const iconElementDiv = document.createElement("div");
-    iconElementDiv.classList.add('col');
-    const iconElement = document.createElement("img");
-    iconElement.id = "delete-icon";
-    iconElement.src = "deleteIcon.svg";
-    // removing event using delete icon
-    iconElement.addEventListener("click", function () {
-      newDiv.remove();
+    // Variables
+    const expenseInput = document.getElementById("expense-input").value;
+    const priceInput = Number(document.getElementById("price-input").value);
+    const totalExpense = document.getElementById("total-expense");
+    // New added div
+    const newElement = document.createElement("div");
+
+    newElement.classList.add("row", "mb-3");
+    // User expense
+    const addedExpense = document.createElement("div");
+    addedExpense.classList.add("col", "text-center");
+    addedExpense.style.marginLeft = "10%";
+    addedExpense.style.marginTop = "15px";
+    addedExpense.textContent = expenseInput;
+
+    // User price
+    const addedPrice = document.createElement("div");
+    addedPrice.classList.add("col", "text-center");
+    addedPrice.style.marginRight = "10%";
+    addedPrice.style.marginTop = "15px";
+    addedPrice.innerHTML = priceInput;
+    // User action (delete button)
+    const trashSVG = document.createElement("div");
+    trashSVG.classList.add("col", "text-center");
+    trashSVG.style.marginTop = "15px";
+    trashSVG.style.position = "relative";
+    trashSVG.style.right = "10%";
+
+    trashSVG.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+    </svg>`;
+    trashSVG.addEventListener("click", function () {
+      total -= Number(newElement.dataset.price);
+      totalExpense.innerHTML = total;
+      newElement.remove();
     });
-    // ihalo mo na insan (append)
-    actionDiv.appendChild(iconElement);
-    //displaying the total
+    // User total
+    total += Number(priceInput);
+    totalExpense.innerHTML = total;
+    newElement.dataset.price = priceInput;
 
-    // adding the new added elements in the HTML
-    newDiv.appendChild(expenseElement);
-    newDiv.appendChild(priceElement);
-    newDiv.appendChild(actionDiv);
-    newDiv.appendChild(totalDiv);
-
-    dataDiv.appendChild(newDiv);
+    document.body.appendChild(newElement);
+    newElement.appendChild(addedExpense);
+    newElement.appendChild(addedPrice);
+    newElement.appendChild(trashSVG);
   }
 });
