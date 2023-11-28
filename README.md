@@ -12,7 +12,7 @@ Expenzy is a simple web application built with vanilla JS, HTML, and CSS that he
 
 Include a link to a live demo or screenshots to showcase your application. If your project is hosted on GitHub Pages, you can include a link to the live demo:
 
-[Expenzy Demo](https://prawnsea.github.io/expenzy)
+[Expenzy Demo]([https://prawnsea.github.io/expenzy](https://prawnsea.github.io/Expense-Tracker/))
 
 ## Getting Started
 
