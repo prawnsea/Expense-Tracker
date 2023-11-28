@@ -1,24 +1,80 @@
-#title{
-    margin-top: 20px;
-    font-family: 'Itim', cursive;
-    text-shadow: -0.5px 0 black, 0 0.5px black, 1px 0 black, 0 -0.5px black;
-}
-#description{
-    margin-top: 10px;
-
-}
-#nameInput, #priceInput{
-    opacity: 75%;
-}
-#nameInput:focus, #priceInput:focus{
-    box-shadow: none !important;
-    border: 1px solid black;
-}
-#tableHeader{
-    margin-top: 20px;
-    background-color: #198655;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-.expense-header{
-}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url(/BackGround.jpeg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  }
+  
+  h1{
+    text-align: center;
+    font-family: 'Pixelify Sans', sans-serif;
+  }
+  p{
+    text-align: center;
+  }
+  
+  .input-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .input-section label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .input-section input[type="number"], .input-section input[type="date"] {
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .input-section button {
+    padding: 5px 10px;
+    background-color: #81c0ec;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .expenses-list {
+    margin: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color:#81c0ec;
+    color: white;
+  }
+  
+  tfoot td {
+    font-weight: bold;
+  }
+  
+  .delete-btn {
+    padding: 5px 10px;
+    background-color: #81c0ec;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
